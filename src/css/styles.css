@@ -4,22 +4,120 @@
   | default @import url()
   |============================
 */
-@import url('./reset.css');
-@import url('./vite-promo.css');
-@import url('./header.css');
 
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+@import 'simplelightbox/dist/simple-lightbox.min.css';
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  width: 1440px;
+}
+
+.item {
+  background-color: #f6f6fe;
+  border-radius: 8px;
+
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+
+  max-width: 400px;
+  max-height: 270px;
+  margin-top: 24px;
+}
+
+/* Gallery */
+
+.gallery {
+  display: flex;
+  padding: 24px 156px;
+
+  flex-wrap: wrap;
+
+  gap: 24px;
+}
+
+/* Img */
+
+.gallery-image {
+  width: 360px;
+  height: 200px;
+  transition: transform 0.2s;
+}
+
+.gallery-image:hover {
+  -webkit-transform: scale(1.075);
+  -ms-transform: scale(1.075);
+  transform: scale(1.075);
+}
+
+/* Form */
+
+.login-form {
+  display: inline-flex;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  color: #2e2f42;
+
   font-size: 16px;
-  line-height: 24px;
+  font-style: normal;
   font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.64px;
+}
 
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
+button[type='submit'] {
+  border-radius: 8px;
+  background: #4e75ff;
+  padding: 8px 16px;
+  color: #ffff;
+  border: none;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+input[name='email'],
+input[name='password'] {
+  width: 360px;
+  height: 40px;
 }

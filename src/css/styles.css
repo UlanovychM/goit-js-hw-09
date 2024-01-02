@@ -87,7 +87,12 @@ body {
 
 /* Form */
 
-.login-form {
+.form {
+  width: 408px;
+  height: 296px;
+}
+
+.feedback-form {
   display: inline-flex;
   padding: 24px;
   flex-direction: column;
@@ -109,6 +114,8 @@ label {
 }
 
 button[type='submit'] {
+  margin-top: 8px;
+
   border-radius: 8px;
   background: #4e75ff;
   padding: 8px 16px;
@@ -116,8 +123,15 @@ button[type='submit'] {
   border: none;
 }
 
-input[name='email'],
-input[name='password'] {
+input[name='email'] {
   width: 360px;
   height: 40px;
+  border-radius: 6px;
+}
+
+textarea[name='message'] {
+  width: 360px;
+  height: 80px;
+  resize: none;
+  border-radius: 6px;
 }

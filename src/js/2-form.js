@@ -1,25 +1,30 @@
 'use strict';
-let userInfo = {};
+let userData = {};
 const form = document.querySelector('form');
 const localStorageKey = 'feedback-form-state';
 
 form.addEventListener('input', e => {
-  userInfo[e.target.name] = e.target.value;
+  userData[e.target.name] = e.target.value;
 
-  localStorage.setItem(localStorageKey, JSON.stringify(userInfo));
+  localStorage.setItem(localStorageKey, JSON.stringify(userData));
 });
 
 if (localStorage.getItem(localStorageKey)) {
-  userInfo = JSON.parse(localStorage.getItem(localStorageKey));
-  for (let key in userInfo) {
-    form.elements[key].value = userInfo[key];
-    console.log((form.elements[key].value = userInfo[key]));
+  userData = JSON.parse(localStorage.getItem(localStorageKey));
+  for (let key in userData) {
+    form.elements[key].value = userData[key];
   }
 }
 
 form.addEventListener('submit', e => {
-  e.preventDefault();
-  console.log(e.target.elements.message.value.trim());
-  localStorage.removeItem(localStorageKey);
-  form.reset();
+  if (e.target.elements.value !== '' && e.target.elements.value !== null) {
+    e.preventDefault();
+    console.log(e.target.elements.email.value.trim());
+    console.log(e.target.elements.message.value.trim());
+
+    localStorage.removeItem(localStorageKey);
+    form.reset();
+  }
+
+  return;
 });

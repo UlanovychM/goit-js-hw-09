@@ -1,0 +1,2 @@
+let t={};const o=document.querySelector("form"),a="feedback-form-state";o.addEventListener("input",e=>{t[e.target.name]=e.target.value,localStorage.setItem(a,JSON.stringify(t))});if(localStorage.getItem(a)){t=JSON.parse(localStorage.getItem(a));for(let e in t)o.elements[e].value=t[e],console.log(o.elements[e].value=t[e])}o.addEventListener("submit",e=>{e.preventDefault(),console.log(e.target.elements.message.value.trim()),localStorage.removeItem(a),o.reset()});
+//# sourceMappingURL=2-form-d8c43459.js.map

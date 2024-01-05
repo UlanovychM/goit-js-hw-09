@@ -45,6 +45,13 @@ body {
   width: 1440px;
 }
 
+.index-item {
+  font-size: x-large;
+}
+
+.index-li:last-child {
+  margin-top: 20px;
+}
 .item {
   background-color: #f6f6fe;
   border-radius: 8px;
